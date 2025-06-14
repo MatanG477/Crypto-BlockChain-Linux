@@ -2,7 +2,7 @@ Matan Gurfinkel
 Amit Oved
 Ziv Balassiano
 
-# BlockChain‑LinuxExercise
+# BlockChain‑LinuxExercise1
 
 This repository contains a set of educational exercises combining Linux scripting and C++ implementations to explore basic blockchain principles.
 
