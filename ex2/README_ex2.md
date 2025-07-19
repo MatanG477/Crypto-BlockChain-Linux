@@ -21,7 +21,7 @@ To install the package, run:
 
 ```bash
 sudo dpkg -i mta-utils-dev-x86_64.deb
-sudo apt-get install -f    # Fix dependencies if needed
+sudo apt-get install -f    # Fix dependencies if needed```
 
 ---
 
