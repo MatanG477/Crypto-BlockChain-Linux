@@ -13,6 +13,19 @@ The first thread to successfully decrypt the password wins the round.
 
 ---
 
+## 📦 Prerequisites
+
+Before running the program, you **must install** the external utility package `mta-utils-dev-x86_64.deb`, which provides essential functions like `MTA_get_rand_data`, `MTA_encrypt`, and `MTA_decrypt`.
+
+To install the package, run:
+
+```bash
+sudo dpkg -i mta-utils-dev-x86_64.deb
+sudo apt-get install -f    # Fix dependencies if needed
+
+---
+
+
 ## ⚙️ Build Instructions
 
 You can build the project using the provided `Makefile`:
