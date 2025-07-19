@@ -1,5 +1,5 @@
 
-# 🔐 Ex2 - Multi-threaded Password Decryption Simulation
+# 🔐 Multi-threaded Password Decryption Simulation- Task 2
 
 ## 📘 Overview
 
