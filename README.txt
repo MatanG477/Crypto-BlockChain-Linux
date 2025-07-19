@@ -1,12 +1,26 @@
-Matan Gurfinkel
-Amit Oved
-Ziv Balassiano
+# Crypto/Blockchain-LinuxExercise1
 
-# BlockChain‑LinuxExercise1
+**Authors:** Matan Gurfinkel, Amit Oved, Ziv Balassiano
 
-This repository contains a set of educational exercises combining Linux scripting and C++ implementations to explore basic blockchain principles.
+---
 
-- **blockchain1.sh** – Shell‑based introduction, e.g. generating hashes or interacting with Linux tools.
-- **ex1.cpp–ex5.cpp** – Five incremental C++ programs that build on each other, possibly covering data structures (blocks, chains), hashing, validation, etc.
-- **infra.cpp/infra.h** – Shared utilities to support the exercises (e.g., file I/O, hashing helpers).
-- **Makefile** – Compilation script for easy building and running of the C++ codebase.
+## General Overview
+
+This repository contains a collection of exercises and projects related to blockchain concepts and crypto using Linux scripting and C++. Each exercise is organized in its own directory.
+
+Each directory includes a dedicated README file that explains the specific task, implementation details, and usage instructions.
+
+This main README serves as a general entry point to the project.
+
+---
+
+## Usage
+
+For details on each exercise or component, please navigate to the respective directory and read its README file.
+
+---
+
+## Notes
+
+- The project structure is designed to keep each exercise modular and well-documented.
+- Feel free to explore the folders in any order.
