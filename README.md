@@ -1,12 +1,12 @@
 # 🧩 Blockchain & Multithreading Linux Exercises
 
-Welcome to a Linux-based project containing two separate exercises — each focusing on a different topic, implemented using C++/C, Bash scripts, shared libraries, Makefiles, and detailed documentation.
+Welcome to a Linux-based project containing **three** separate exercises — each focusing on a different topic, implemented using C++/C, Bash scripts, shared libraries, Makefiles, and detailed documentation.
 
 ---
 
 ## 📂 Repository Structure
 
-This repository includes two main sub-projects:
+This repository includes three main sub-projects:
 
 ### 🔹 [ex1](./ex1) — Bitcoin Blockchain Data Processing
 
@@ -30,8 +30,6 @@ This repository includes two main sub-projects:
 
 📄 For complete details, usage examples, and notes — see [`ex2/README.md`](./ex2/README.md)
 
----
-
 #### 📸 Sample Output from ex2
 
 These screenshots show live execution of the decryption game:
@@ -49,21 +47,46 @@ Dive into [`ex2/README.md`](./ex2/README.md) for the full technical breakdown!
 
 ---
 
+### 🔹 [ex3](./ex3) — MtaCrypt (Dockerized IPC via Named Pipes)
+
+- A containerized version of the password-encryption exercise where the **server (encrypter)** and multiple **clients (decrypters)** run in separate Docker containers.
+- Inter-process communication is done through **named pipes (FIFOs)** mounted from the host (e.g., host `/tmp/mtacrypt` ↔ container `/mnt/mta`).
+- The server broadcasts the current encrypted password and rotates it periodically; clients subscribe via their own FIFOs and keep trying keys until a match is found.
+- The server reads configuration (e.g., password length) from `mtacrypt.conf` in the mounted directory.
+
+💡 `mta-utils-dev-x86_64.deb` is required. You can install it manually **or** use the provided `launcher.sh` (which installs it automatically before starting the containers).
+
+📄 For full details and run instructions — see [`ex3/README.md`](./ex3/README.md).
+
+#### 📸 Sample Output from ex3
+
+- **Server + multiple clients (logs):**  
+  ![Server + clients logs](./images/ex3/containers-and-logs.png)
+
+- **Client log stream (tail -f inside container):**  
+  ![Client logs](./images/ex3/decrypter-logs.png)
+
+- **FIFOs & config on host (`/tmp/mtacrypt`):**  
+  ![Pipes + config](./images/ex3/pipes-and-conf.png)
+
+---
+
 ## 🛠 General Requirements
 
 - Linux-based OS.
 - Bash and G++/GCC installed.
+- Docker (for `ex3`).
 - Basic terminal usage knowledge.
-- It's highly recommended to read the README in each folder before running.
+- It’s highly recommended to read the README in each folder before running.
 
 ---
 
 ## 🧑‍💻 Getting Started
 
-1. Choose a sub-project (`ex1` or `ex2`) based on your interest.
+1. Choose a sub-project (`ex1`, `ex2`, or `ex3`) based on your interest.
 2. Read the relevant README file.
 3. Install any necessary dependencies.
 4. Run `make` to build the code.
-5. Execute the relevant file as instructed.
+5. Execute the relevant script/binary as instructed.
 
 Good luck! 🚀
