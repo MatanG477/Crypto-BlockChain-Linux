@@ -2,6 +2,23 @@
 
 NUM_DECRYPTERS=${1:-3}
 
+# 0. התקנת mta-utils-dev-x86_64.deb (אם נדרש; ללא שינוי לשאר הסקריפט)
+PKG_PATH=""
+if [ -f "./ex3/mta-utils-dev-x86_64.deb" ]; then
+  PKG_PATH="./ex3/mta-utils-dev-x86_64.deb"
+elif [ -f "./mta-utils-dev-x86_64.deb" ]; then
+  PKG_PATH="./mta-utils-dev-x86_64.deb"
+fi
+
+if [ -n "$PKG_PATH" ]; then
+  if ! dpkg -l | grep -E '^ii\s+.*mta-utils' >/dev/null 2>&1; then
+    echo "Installing mta-utils from $PKG_PATH ..."
+    sudo dpkg -i "$PKG_PATH" || { sudo apt-get -f install -y && sudo dpkg -i "$PKG_PATH"; }
+  fi
+else
+  echo "WARNING: mta-utils-dev-x86_64.deb not found in ./ex3/ or repo root; continuing..."
+fi
+
 # 1. מחיקת כל הפייפים הישנים וקבצים זמניים
 sudo find /mnt/mta/ -type p -delete 2>/dev/null
 sudo rm -f /mnt/mta/decrypter_pipe_* /mnt/mta/server_pipe
